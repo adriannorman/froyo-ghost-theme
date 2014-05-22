@@ -1,0 +1,60 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<main class="content" role="main">
+
+    <article class="{{post_class}}">
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+
+            <div class="inner">
+                <header class="post-header">
+                    <h1 class="post-title">{{{title}}}</h1>
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
+                    <hr>
+                </header>
+                <section class="post-content">
+                    {{content}}
+                </section>
+                <section class="post-share">
+                    <div class="post-share-icons">
+                        <a class="fa fa-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                            <span class="hidden">Twitter</span>
+                        </a>
+                        <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                            <span class="hidden">Facebook</span>
+                        </a>
+                        <a class="fa fa-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                            <span class="hidden">Google+</span>
+                        </a>
+                    </div>
+                    <h6>Share this post:</h6>
+                </section>
+                <p class="post-tags"><i class="fa fa-tags"></i> {{tags separator=", "}}</p>
+            </div>
+            <section class="post-author">
+                <div class="inner">
+                    <div class="author-image-container col-aside">
+                        <img src="{{author.image}}" class="author-image" />
+                    </div>
+                    <div class="author-info">
+                        <h4>{{author.name}}</h4>
+                        <p>{{author.bio}}</p>
+                    </div>
+                </div>
+                <span class="clearfix"></span>
+            </section>
+            <div class="inner">
+                <div id="disqus_thread" data-disqus-shortname="adriannorman" data-disqus-identifier="{{id}}"></div>
+            </div>
+        {{/post}}
+    </article>
+
+</main>
+<script src="{{asset "js/disqus.js"}}"></script>

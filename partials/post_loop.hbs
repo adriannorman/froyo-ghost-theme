@@ -1,0 +1,28 @@
+{{#foreach posts}}
+
+    <article class="post-item">
+        <div class="inner">
+            <header class="post-item-header">
+                <aside class="col-aside">
+                </aside>
+                <h2 class="post-item-title"><a href="{{url}}">{{{title}}}</a></h2>
+            </header>
+            <div class="post-preview">
+                <aside class="col-aside">
+                    <span class="post-meta">
+                        <time class="post-item-time" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> 
+                        <p class="post-item-tags"><i class="fa fa-tags"></i> {{tags separator=", "}}</p>
+                    </span>            
+                </aside>
+                <section class="post-excerpt">
+                    <p>{{excerpt words="35"}}&hellip;</p>
+                    <a class="btn" href="{{url}}">Read More</a>
+                </section>
+            </div>
+        </div>
+    </article>
+
+{{/foreach}}
+
+{{!! After all the posts, we have the previous/next pagination links }}
+{{pagination}}

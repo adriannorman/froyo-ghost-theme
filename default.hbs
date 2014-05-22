@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />    
+    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />    
+
+    <!--[if lt IE 9]>
+        <script src="{{asset "js/html5shiv.js"}}"></script>
+    <![endif]-->
+
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    {{> site_header }}
+
+    {{{body}}}
+
+    <footer class="site-footer">
+        <div class="inner">
+            <section class="copyright">
+                All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.
+            </section>
+            <section class="poweredby">
+               Theme by <a href="http://adriannorman.me">Adrian Norman</a> &bull; Published with <a href="https://ghost.org"> Ghost</a>
+            </section>
+        </div>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
+</body>
+</html>
