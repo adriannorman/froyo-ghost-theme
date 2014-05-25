@@ -4,6 +4,8 @@ Free theme for Ghost. Built upon Casper.
 
 Demo: [froyo.adriannorman.me](http://froyo.adriannorman.me)
 
+To enable comments, place your Disqus shortname in the 'data-disqus-shortname' attribute of the #disqus_thread section at the bottom of the post.hbs file.
+
 ## Copyright & License
 
 Copyright (c) 2014 Adrian Norman - Released under the MIT License.
