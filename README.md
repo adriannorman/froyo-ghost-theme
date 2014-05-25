@@ -1,6 +1,8 @@
 # Froyo
 
-Free theme for Ghost. Built on Casper.
+Free theme for Ghost. Built upon Casper.
+
+Demo: [froyo.adriannorman.me](http://froyo.adriannorman.me)
 
 ## Copyright & License
 
